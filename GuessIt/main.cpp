@@ -1,18 +1,11 @@
 #include <iostream>
-
-int ReadNumberFromConsole()
-{
-	int userNumber = 0;
-	std::cout << "Guess the number> ";
-	std::cin >> userNumber;
-	return userNumber;
-}
+#include "Utils.h"
 
 int main()
 {
-	std::cout << "Guess It!\n";
+	std::cout << "GuessIt!\n\n";
 
-	const int secretNumber = 59;
+	const int secretNumber = PickRandomNumberBetween(1, 100);
 	int userNumber = 0;
 
 	while (userNumber != secretNumber)
