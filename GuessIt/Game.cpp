@@ -37,7 +37,7 @@ void Game::Play()
 		std::cout << "An error occurred: " << ex.what() << "\n";
 	}
 
-	std::sort(begin(m_leaderboard), end(m_leaderboard), OrderByAttempts{});
+	std::ranges::sort(m_leaderboard, OrderByAttempts{});
 }
 
 void Game::PrintLeaderboard() const
