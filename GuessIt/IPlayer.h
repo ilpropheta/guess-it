@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 
 enum class GameState
 {
@@ -9,4 +10,5 @@ class IPlayer
 {
 public:
 	virtual int PickNumber(GameState gs) = 0;
+	virtual std::string AskName() = 0;
 };

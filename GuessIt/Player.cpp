@@ -20,6 +20,14 @@ int Player::PickNumber(GameState gs)
 	return Utils::ReadNumberFromConsole();
 }
 
+std::string Player::AskName()
+{
+	std::string name;
+	std::cout << "Your name> ";
+	std::cin >> name;
+	return name;
+}
+
 ComputerPlayer::ComputerPlayer(int min, int max)
 	: m_min(min), m_max(max)
 {
@@ -41,4 +49,9 @@ int ComputerPlayer::PickNumber(GameState gs)
 		break;
 	}
 	return m_current = m_min + (m_max - m_min) / 2;
+}
+
+std::string ComputerPlayer::AskName()
+{
+	return "pc";
 }
