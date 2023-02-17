@@ -14,12 +14,10 @@ int main()
 		const auto userNumber = player.PickNumber(gameState);
 		if (userNumber > secretNumber)
 		{
-			std::cout << "Too large. Try again...\n";
 			gameState = GameState::TooLarge;
 		}
 		else if (userNumber < secretNumber)
 		{
-			std::cout << "Too small. Try again...\n";
 			gameState = GameState::TooSmall;
 		}
 		else
