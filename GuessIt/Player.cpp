@@ -53,5 +53,11 @@ int ComputerPlayer::PickNumber(GameState gs)
 
 std::string ComputerPlayer::AskName()
 {
-	return "pc";
+	static const std::string alphabet = "abcdefghijklmnopqrstuvwxyz";
+	std::string name;
+	for (auto i=0; i<5; ++i)
+	{
+		name.push_back(alphabet[Utils::PickRandomNumberBetween(0, 25)]);
+	}
+	return name;
 }
