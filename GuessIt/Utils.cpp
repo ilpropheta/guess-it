@@ -15,5 +15,13 @@ int Utils::ReadNumberFromConsole()
 	int userNumber = 0;
 	std::cout << "Guess the number > ";
 	std::cin >> userNumber;
+	if (std::cin.fail())
+	{
+		throw std::runtime_error{ "Some error occurred" };
+	}
+	if (userNumber == 0)
+	{
+		throw GameStoppedException{};
+	}
 	return userNumber;
 }
