@@ -1,10 +1,19 @@
 #include "Game.h"
 #include <iostream>
+#include <algorithm>
 #include "Player.h"
 #include "Utils.h"
 
 const int MinGuess = 1;
 const int MaxGuess = 100;
+
+struct OrderByAttempts
+{
+	bool operator()(const LeaderboardEntry& first, const LeaderboardEntry& second) const
+	{
+		return first.Attempts < second.Attempts;
+	}
+};
 
 void Game::Play()
 {
@@ -27,6 +36,8 @@ void Game::Play()
 	{
 		std::cout << "An error occurred: " << ex.what() << "\n";
 	}
+
+	std::sort(begin(m_leaderboard), end(m_leaderboard), OrderByAttempts{});
 }
 
 void Game::PrintLeaderboard() const
