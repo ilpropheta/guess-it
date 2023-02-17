@@ -7,14 +7,6 @@
 const int MinGuess = 1;
 const int MaxGuess = 100;
 
-struct OrderByAttempts
-{
-	bool operator()(const LeaderboardEntry& first, const LeaderboardEntry& second) const
-	{
-		return first.Attempts < second.Attempts;
-	}
-};
-
 void Game::Play()
 {
 	std::cout << "GuessIt!\n\n";
@@ -37,7 +29,9 @@ void Game::Play()
 		std::cout << "An error occurred: " << ex.what() << "\n";
 	}
 
-	std::ranges::sort(m_leaderboard, OrderByAttempts{});
+	std::ranges::sort(m_leaderboard, [](const LeaderboardEntry& first, const LeaderboardEntry& second) {
+		return first.Attempts < second.Attempts;
+	});
 }
 
 void Game::PrintLeaderboard() const
