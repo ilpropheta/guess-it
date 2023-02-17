@@ -16,11 +16,7 @@ void Game::Play()
 		for (auto i=0; i<10; ++i)
 		{
 			const int secretNumber = Utils::PickRandomNumberBetween(MinGuess, MaxGuess);
-			//ComputerPlayer player{ MinGuess, MaxGuess };
-			int counter = 0;
-			CustomPlayer player{ "dumb", [&](GameState) {
-				return counter++;
-			}};
+			ComputerPlayer player{ MinGuess, MaxGuess };
 			PlayGame(secretNumber, player);
 		}
 	}
