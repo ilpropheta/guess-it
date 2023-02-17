@@ -2,12 +2,13 @@
 #include "Utils.h"
 #include "Player.h"
 
-void PlayGame()
+const int MinGuess = 1;
+const int MaxGuess = 100;
+
+void PlayGame(int secretNumber, IPlayer& player)
 {
 	std::cout << "GuessIt!\n\n";
-	const int secretNumber = Utils::PickRandomNumberBetween(1, 100);
-
-	Player player;
+	
 	GameState gameState = GameState::FirstGuess;
 	while (gameState != GameState::Guessed)
 	{
@@ -32,7 +33,9 @@ int main()
 {
 	try
 	{
-		PlayGame();
+		const int secretNumber = Utils::PickRandomNumberBetween(MinGuess, MaxGuess);
+		ComputerPlayer computerPlayer{ MinGuess, MaxGuess };
+		PlayGame(secretNumber, computerPlayer);
 	}
 	catch(const Utils::GameStoppedException&)
 	{
