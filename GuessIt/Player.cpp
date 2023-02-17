@@ -1,5 +1,6 @@
 #include "Player.h"
 #include <iostream>
+#include <numeric>
 #include "Utils.h"
 
 int Player::PickNumber(GameState gs)
@@ -51,9 +52,16 @@ int ComputerPlayer::PickNumber(GameState gs)
 	return m_current = m_min + (m_max - m_min) / 2;
 }
 
+std::string GenerateAlphabet()
+{
+	std::string alphabet(26, 'a'); // "aaaa..."
+	std::iota(begin(alphabet), end(alphabet), 'a'); // "abcd..."
+	return alphabet;
+}
+
 std::string ComputerPlayer::AskName()
 {
-	static const std::string alphabet = "abcdefghijklmnopqrstuvwxyz";
+	static const std::string alphabet = GenerateAlphabet();
 	std::string name;
 	for (auto i=0; i<5; ++i)
 	{
