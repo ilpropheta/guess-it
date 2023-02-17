@@ -69,3 +69,18 @@ std::string ComputerPlayer::AskName()
 	}
 	return name;
 }
+
+CustomPlayer::CustomPlayer(const std::string& name, std::function<int(GameState)> logic)
+	: m_name(name), m_logic(logic)
+{
+}
+
+std::string CustomPlayer::AskName()
+{
+	return m_name;
+}
+
+int CustomPlayer::PickNumber(GameState gs)
+{
+	return m_logic(gs);
+}
