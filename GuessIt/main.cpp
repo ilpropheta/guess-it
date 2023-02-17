@@ -6,6 +6,22 @@ int main()
 
 	const int secretNumber = 59;
 	int userNumber = 0;
-	std::cout << "Guess the number> ";
-	std::cin >> userNumber;
+
+	while (userNumber != secretNumber)
+	{
+		std::cout << "Guess the number> ";
+		std::cin >> userNumber;
+		if (userNumber > secretNumber)
+		{
+			std::cout << "Too large. Try again...\n";
+		}
+		else if (userNumber < secretNumber)
+		{
+			std::cout << "Too small. Try again...\n";
+		}
+		else
+		{
+			std::cout << "Congratulations! It was " << secretNumber << "!\n";
+		}
+	}
 }
