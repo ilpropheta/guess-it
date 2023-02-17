@@ -1,5 +1,13 @@
 #include <iostream>
 
+int ReadNumberFromConsole()
+{
+	int userNumber = 0;
+	std::cout << "Guess the number> ";
+	std::cin >> userNumber;
+	return userNumber;
+}
+
 int main()
 {
 	std::cout << "Guess It!\n";
@@ -9,8 +17,7 @@ int main()
 
 	while (userNumber != secretNumber)
 	{
-		std::cout << "Guess the number> ";
-		std::cin >> userNumber;
+		userNumber = ReadNumberFromConsole();
 		if (userNumber > secretNumber)
 		{
 			std::cout << "Too large. Try again...\n";
