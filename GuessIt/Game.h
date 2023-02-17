@@ -14,6 +14,7 @@ class Game
 {
 public:
 	void Play();
+	void PrintLeaderboard() const;
 private:
 	void PlayGame(int secretNumber, IPlayer& player);
 
