@@ -2,7 +2,7 @@
 #include <iostream>
 #include <random>
 
-int PickRandomNumberBetween(int min, int max)
+int Utils::PickRandomNumberBetween(int min, int max)
 {
     std::random_device r;
     std::default_random_engine e1(r());
@@ -10,7 +10,7 @@ int PickRandomNumberBetween(int min, int max)
     return uniform_dist(e1);
 }
 
-int ReadNumberFromConsole()
+int Utils::ReadNumberFromConsole()
 {
 	int userNumber = 0;
 	std::cout << "Guess the number > ";

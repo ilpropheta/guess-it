@@ -1,4 +1,7 @@
 #pragma once
 
-int PickRandomNumberBetween(int min, int max);
-int ReadNumberFromConsole();
+namespace Utils
+{
+	int PickRandomNumberBetween(int min, int max);
+	int ReadNumberFromConsole();
+}
