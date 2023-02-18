@@ -7,6 +7,9 @@ Semplice gioco interattivo a supporto del corso "É facile programmare in C++, s
 - [Scaricare](https://visualstudio.microsoft.com/it/downloads/) e Installare *Visual Studio 2022 Community Edition*
 - Assicurarsi di installare i componenti di sviluppo per C++
 - Aprire la *solution* `GuessIt.sln`
+- Compilare e lanciare il programma con `CTRL+F5`, oppure:
+
+![image](https://user-images.githubusercontent.com/5806546/219884012-c6ba4378-8c6a-4177-ba51-da712596663c.png)
 
 ## Come consultare le iterazioni di sviluppo
 
